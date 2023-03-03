@@ -25,12 +25,12 @@ cd OutcomeBasedCourse
 ```
 Creating a python virtual environment 
 ```bash
+sudo apt install apache2 mysql-server python3 python3-pip python3-mysqldb libldap2-dev libmysqlclient-dev python3.7-dev
+```
+```bash
 sudo pip3 install virtualenv
 virtualenv env
 source env/bin/activate
-```
-```bash
-sudo apt install apache2 mysql-server python3 python3-pip python3-mysqldb libldap2-dev libmysqlclient-dev python3.7-dev
 sudo python3 -m pip install -r requirements.txt
 ```
 
