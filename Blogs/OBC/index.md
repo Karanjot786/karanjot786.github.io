@@ -23,10 +23,10 @@ Use the following command to install and setup Outcome Based Course.
 git clone https://github.com/GreatDevelopers/OutcomeBasedCourse
 cd OutcomeBasedCourse
 ```
-Creating a python virtual environment 
 ```bash
 sudo apt install apache2 mysql-server python3 python3-pip python3-mysqldb libldap2-dev libmysqlclient-dev python3.7-dev
 ```
+Creating a python virtual environment 
 ```bash
 sudo pip3 install virtualenv
 virtualenv env
