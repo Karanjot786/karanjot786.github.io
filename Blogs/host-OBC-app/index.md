@@ -89,7 +89,8 @@ ExecStart=/home/karanjot786/OutcomeBasedCourse/env/bin/gunicorn \
           --workers 3 \
           --bind unix:/run/gunicorn.sock \
           OutcomeBasedCourse.wsgi:application
-
+Restart=always
+RestartSec=3
 [Install]
 WantedBy=multi-user.target
 ```
