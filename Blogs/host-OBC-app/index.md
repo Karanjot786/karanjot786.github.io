@@ -46,9 +46,6 @@ mysql -u root -p -e "create database outcomebasedcourse;"
 ### Step 4 - Configuring gunicorn
 Add your IP address or domain to the ALLOWED_HOSTS variable in settings.py.
 ![Home](./assets/1.png)
-```bash
-
-```
 Lets test gunicorn's ability to serve our application by firing the following commands:
 ```bash
 gunicorn --bind 0.0.0.0:8000 OutcomeBasedCourse.wsgi
