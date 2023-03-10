@@ -5,10 +5,6 @@
 1. [Features](#features)
 2. [Download](#download)
 3. [Development](#development)
-4. [Contributions and Community](#contributions-and-community)
-5. [Links](#links)
-6. [Translation Contributors](#translation-contributors)
-7. [License](#license)
 8. [QnA](#questions-and-answers)
 
 
