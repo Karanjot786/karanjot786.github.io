@@ -671,7 +671,7 @@ Let's edit `article.html` first. Frappe uses Bootstrap 4 by default for it's web
 
 
 ```HTML
-{%  extends 'templates/web.html' %}
+
 
 {% block page_content %}
 <div class='py-20 row'>
