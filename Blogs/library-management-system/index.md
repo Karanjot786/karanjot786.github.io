@@ -673,7 +673,7 @@ Let's edit `article.html` first. Frappe uses Bootstrap 4 by default for it's web
 ```HTML
 
 
-{% block page_content %}
+
 <div class='py-20 row'>
     <div class='col-sm-2'>
         <img alt='{{ title }}' src='{{ image }}'>
@@ -695,7 +695,7 @@ Let's edit `article.html` first. Frappe uses Bootstrap 4 by default for it's web
         <p>{{ description }}</p>
     </div>
 </div>
-{% endblock %}
+
 ```
 
 Now, go to any Article and click on See on Website. If you have filled in all fields of your Article, you should see a page like this:
