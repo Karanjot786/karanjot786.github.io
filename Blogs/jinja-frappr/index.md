@@ -359,7 +359,7 @@ Edit the article_row.html and add the following HTML:
 Now, the articles list should look prettier. You can click on any article to view it's details.
 
 ![article_list](./assets/List.png)
-
+{% raw %}
 ## Jinja 
 Frappe is a web framework that uses Jinja2 templating engine. Here are some basic components of Jinja that are commonly used in Frappe:
 
@@ -369,7 +369,7 @@ Frappe is a web framework that uses Jinja2 templating engine. Here are some basi
 
 **Template Inheritance:** Frappe, like other web frameworks, allows you to define base templates that can be extended by child templates. The **{% extends 'base.html' %}** statement is used to inherit from the base template.
 
-
+{% endraw %}
 ## Questions and Answers
 
 **What is Jinja?**
