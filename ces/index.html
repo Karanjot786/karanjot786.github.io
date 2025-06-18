@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Partnership Proposal | GenZCareer × Stanford Center for Entrepreneurial Studies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://www.stanford.edu/wp-content/uploads/2017/03/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" href="https://www.stanford.edu/wp-content/uploads/2017/03/favicon-16x16.png" sizes="16x16">
+    
+    <!-- Stanford Official Brand Guidelines -->
+    <style>
+        :root {
+            --stanford-cardinal: #8C1515;
+            --stanford-dark-red: #820000;
+            --stanford-cool-grey: #4D4F53;
+            --stanford-black: #2E2D29;
+            --stanford-fog: #F4F4F4;
+            --stanford-light-sage: #F9F9F9;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background-color: #FFFFFF;
+            line-height: 1.6;
+            color: var(--stanford-black);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Source Serif Pro', serif;
+            font-weight: 600;
+            color: var(--stanford-black);
+        }
+        
+        .stanford-header {
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #E5E5E5;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stanford-logo {
+            font-family: 'Source Serif Pro', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .nav-link {
+            color: var(--stanford-cool-grey);
+            font-weight: 500;
+            text-decoration: none;
+            padding: 0.75rem 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--stanford-cardinal);
+            border-bottom-color: var(--stanford-cardinal);
+        }
+        
+        .stanford-btn {
+            background-color: var(--stanford-cardinal);
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 1.75rem;
+            border: 2px solid var(--stanford-cardinal);
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .stanford-btn:hover {
+            background-color: var(--stanford-dark-red);
+            border-color: var(--stanford-dark-red);
+            color: white;
+            transform: translateY(-1px);
+        }
+        
+        .stanford-btn-outline {
+            background-color: transparent;
+            color: var(--stanford-cardinal);
+            border: 2px solid var(--stanford-cardinal);
+        }
+        
+        .stanford-btn-outline:hover {
+            background-color: var(--stanford-cardinal);
+            color: white;
+        }
+        
+        .stanford-hero-bg {
+            background: linear-gradient(135deg, #F4F4F4 0%, #FFFFFF 100%);
+        }
+        
+        .text-stanford-cardinal { color: var(--stanford-cardinal); }
+        .text-stanford-cool-grey { color: var(--stanford-cool-grey); }
+        .text-stanford-black { color: var(--stanford-black); }
+        .bg-stanford-cardinal { background-color: var(--stanford-cardinal); }
+        .bg-stanford-fog { background-color: var(--stanford-fog); }
+        .border-stanford-cardinal { border-color: var(--stanford-cardinal); }
+        
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1;
+            font-weight: 700;
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.2;
+            margin-bottom: 2rem;
+        }
+        
+        .mission-text {
+            font-size: 1.25rem;
+            line-height: 1.7;
+            color: var(--stanford-cool-grey);
+        }
+        
+        .stats-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            border: 1px solid #E5E5E5;
+            transition: all 0.3s ease;
+        }
+        
+        .stats-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        }
+        
+        .value-prop-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #E5E5E5;
+            height: 100%;
+        }
+        
+        .timeline-item {
+            border-left: 3px solid var(--stanford-cardinal);
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0.5rem;
+            width: 13px;
+            height: 13px;
+            background: var(--stanford-cardinal);
+            border-radius: 50%;
+        }
+        
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        @media (max-width: 768px) {
+            .stanford-btn {
+                font-size: 0.8rem;
+                padding: 0.6rem 1.2rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="stanford-header sticky top-0 z-50">
+        <div class="container mx-auto px-4 lg:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo/Brand -->
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-3">
+                        <img src="logo.png" alt="GenZCareer Logo" class="h-10 w-10">
+                        <div class="stanford-logo">
+                            <span class="text-stanford-black">GenZCareer</span> 
+                            <span class="text-gray-400 font-light mx-2">×</span> 
+                            <span class="text-stanford-cardinal">Stanford CES</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex space-x-8">
+                    <a href="#executive-summary" class="nav-link">Executive Summary</a>
+                    <a href="#value-propositions" class="nav-link">Value Propositions</a>
+                    <a href="#research-initiative" class="nav-link">Research Initiative</a>
+                    <a href="#implementation" class="nav-link">Implementation</a>
+                    <a href="#next-steps" class="nav-link">Next Steps</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-md hover:bg-gray-100">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 bg-white shadow-2xl lg:hidden z-50">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-8">
+                        <span class="stanford-logo text-stanford-cardinal">Menu</span>
+                        <button id="mobile-menu-close" class="p-2 rounded-md hover:bg-gray-100">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <nav class="space-y-4">
+                        <a href="#executive-summary" class="nav-link block py-3 border-b border-gray-100">Executive Summary</a>
+                        <a href="#value-propositions" class="nav-link block py-3 border-b border-gray-100">Value Propositions</a>
+                        <a href="#research-initiative" class="nav-link block py-3 border-b border-gray-100">Research Initiative</a>
+                        <a href="#implementation" class="nav-link block py-3 border-b border-gray-100">Implementation</a>
+                        <a href="#next-steps" class="nav-link block py-3">Next Steps</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="py-16 md:py-24 lg:py-32 stanford-hero-bg">
+            <div class="container mx-auto text-center px-4 lg:px-6">
+                <div class="max-w-5xl mx-auto">
+                    <!-- Logo Section -->
+                    
+                    <h1 class="hero-title text-stanford-black leading-tight mb-6">
+                        Strategic Partnership Proposal
+                    </h1>
+                    <p class="text-2xl md:text-3xl text-stanford-cardinal font-serif font-semibold mb-4">
+                        Entrepreneur-in-Residence & Research Collaboration
+                    </p>
+                    <div class="max-w-4xl mx-auto">
+                        <p class="mission-text mb-8">
+                            Positioning the Stanford Center for Entrepreneurial Studies at the forefront of Gen Z entrepreneurship through collaborative research and joint venture support.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                            <a href="#executive-summary" class="stanford-btn">
+                                Explore the Proposal
+                            </a>
+                            <a href="#next-steps" class="stanford-btn-outline stanford-btn">
+                                Contact Information
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Executive Summary -->
+        <section id="executive-summary" class="py-16 lg:py-24 bg-white">
+            <div class="container mx-auto px-4 lg:px-6">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="section-title text-center text-stanford-black mb-12">Executive Summary: The Strategic Alignment</h2>
+                    
+                    <!-- Impact Stats -->
+                    <div class="grid md:grid-cols-2 gap-8 mb-12">
+                        <div class="stats-card text-center">
+                            <div class="text-4xl font-bold text-stanford-cardinal mb-4">$2.7T</div>
+                            <div class="text-lg font-semibold text-stanford-black mb-2">Annual Revenue Generated</div>
+                            <div class="text-stanford-cool-grey">By Stanford CES-catalyzed ventures</div>
+                        </div>
+                        <div class="stats-card text-center">
+                            <div class="text-4xl font-bold text-stanford-cardinal mb-4">5.4M</div>
+                            <div class="text-lg font-semibold text-stanford-black mb-2">Jobs Created</div>
+                            <div class="text-stanford-cool-grey">Through CES entrepreneurial ecosystem</div>
+                        </div>
+                    </div>
+                    
+                    <div class="prose prose-lg max-w-none">
+                        <p class="text-xl leading-relaxed text-stanford-cool-grey mb-8">
+                            The Stanford Center for Entrepreneurial Studies (CES) stands as a proven engine for global economic transformation. At the core of this extraordinary impact lies CES's dual mandate: <strong>cultivating principled entrepreneurial leaders</strong> and <strong>producing industry-shaping research</strong> that transforms how business is conducted worldwide.
+                        </p>
+                        
+                        <div class="bg-stanford-fog rounded-lg p-8 mb-8">
+                            <h3 class="text-2xl font-bold text-stanford-cardinal mb-4">The Challenge & Our Solution</h3>
+                            <p class="text-lg text-stanford-cool-grey mb-4">
+                                Today, the most pressing challenge facing entrepreneurial education is preparing leaders for a workforce fundamentally transformed by AI and dominated by Gen Z talent. <strong>GenZCareer was built specifically to address this challenge.</strong>
+                            </p>
+                            <p class="text-lg text-stanford-cool-grey">
+                                This proposal outlines a formal strategic partnership where GenZCareer's founder serves as a hybrid <strong>Entrepreneur-in-Residence and Research Fellow</strong>, directly supporting CES's dual mandate while we collaborate to build the definitive dataset on Gen Z entrepreneurship and co-create foundational research on next-generation entrepreneurship.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Propositions -->
+        <section id="value-propositions" class="py-16 lg:py-24 bg-stanford-fog">
+            <div class="container mx-auto px-4 lg:px-6">
+                <div class="max-w-6xl mx-auto">
+                    <h2 class="section-title text-center text-stanford-black mb-16">Dual Value Propositions</h2>
+                    
+                    <div class="grid lg:grid-cols-2 gap-12">
+                        <!-- Value Prop 1 -->
+                        <div class="value-prop-card">
+                            <div class="flex items-center mb-6">
+                                <div class="bg-stanford-cardinal text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl mr-4">1</div>
+                                <h3 class="text-2xl font-bold text-stanford-cardinal">Powering the Venture Creation Pipeline</h3>
+                            </div>
+                            
+                            <p class="text-lg text-stanford-cool-grey mb-6">
+                                <strong>Problem:</strong> Early-stage CES ventures consistently struggle with understanding and accessing their target market—a critical barrier to achieving product-market fit and securing initial talent.
+                            </p>
+                            
+                            <div class="space-y-6">
+                                <div class="border-l-4 border-stanford-cardinal pl-4">
+                                    <h4 class="font-bold text-lg mb-2">Actionable Market Insights</h4>
+                                    <p class="text-stanford-cool-grey">Exclusive, data-driven briefings for Startup Garage teams with proprietary insights on Gen Z consumer behavior and career aspirations.</p>
+                                </div>
+                                
+                                <div class="border-l-4 border-stanford-cardinal pl-4">
+                                    <h4 class="font-bold text-lg mb-2">Dedicated Talent Portal</h4>
+                                    <p class="text-stanford-cool-grey">Private talent-matching platform exclusively for CES ventures to access GenZCareer's growing network of ambitious young professionals.</p>
+                                </div>
+                                
+                                <div class="border-l-4 border-stanford-cardinal pl-4">
+                                    <h4 class="font-bold text-lg mb-2">Founder Showcase Series</h4>
+                                    <p class="text-stanford-cool-grey">Co-produced content featuring CES alumni and current student founders, amplifying their stories and strengthening CES's brand.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Value Prop 2 -->
+                        <div class="value-prop-card">
+                            <div class="flex items-center mb-6">
+                                <div class="bg-stanford-cardinal text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl mr-4">2</div>
+                                <h3 class="text-2xl font-bold text-stanford-cardinal">Shaping the Entrepreneurial Conversation</h3>
+                            </div>
+                            
+                            <p class="text-lg text-stanford-cool-grey mb-6">
+                                <strong>Strategic Goal:</strong> Position CES at the forefront of understanding the most significant shift in entrepreneurship—the rise of the Gen Z founder and AI-native ventures.
+                            </p>
+                            
+                            <div class="space-y-6">
+                                <div class="border-l-4 border-stanford-cardinal pl-4">
+                                    <h4 class="font-bold text-lg mb-2">Collaborative White Paper</h4>
+                                    <p class="text-stanford-cool-grey">"The Great Ambition: How Gen Z is Redefining Entrepreneurial Success" - combining GenZCareer's real-world data with CES's academic rigor.</p>
+                                </div>
+                                
+                                <div class="border-l-4 border-stanford-cardinal pl-4">
+                                    <h4 class="font-bold text-lg mb-2">New Case Study Development</h4>
+                                    <p class="text-stanford-cool-grey">Access to compelling Gen Z-led companies and diverse founder narratives for enriching CES's teaching resources.</p>
+                                </div>
+                                
+                                <div class="border-l-4 border-stanford-cardinal pl-4">
+                                    <h4 class="font-bold text-lg mb-2">Industry Leadership</h4>
+                                    <p class="text-stanford-cool-grey">Joint publications and conference presentations establishing CES as the authority on next-generation entrepreneurship.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Initiative -->
+        <section id="research-initiative" class="py-16 lg:py-24 bg-white">
+            <div class="container mx-auto px-4 lg:px-6">
+                <div class="max-w-5xl mx-auto">
+                    <h2 class="section-title text-center text-stanford-black mb-12">The Gen Z Founder Study</h2>
+                    
+                    <div class="bg-gradient-to-r from-stanford-cardinal to-stanford-dark-red text-white rounded-2xl p-8 mb-12">
+                        <h3 class="text-2xl font-bold mb-4">Core Research Question</h3>
+                        <p class="text-xl leading-relaxed">
+                            "How do first-time Gen Z founders make critical early-stage decisions (idea validation, pivoting, first hires) in an AI-inflected market, and how does this differ from previous entrepreneurial cohorts?"
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-8 mb-12">
+                        <div class="text-center">
+                            <div class="bg-stanford-fog rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl">📊</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-stanford-cardinal mb-3">Quantitative Analysis</h4>
+                            <p class="text-stanford-cool-grey">Real-time tracking of our growing network of early-stage founders using GenZCareer's platform data</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="bg-stanford-fog rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl">📚</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-stanford-cardinal mb-3">Case Studies</h4>
+                            <p class="text-stanford-cool-grey">Deep, longitudinal follow-up with 20+ Gen Z founders from ideation through seed stage</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="bg-stanford-fog rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl">⚖️</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-stanford-cardinal mb-3">Benchmarking</h4>
+                            <p class="text-stanford-cool-grey">Comparison against CES's existing research on founder experience and venture performance</p>
+                        </div>
+                    </div>
+                    
+                    <!-- GenZCareer Contribution -->
+                    <div class="bg-stanford-fog rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold text-stanford-cardinal mb-6 text-center">GenZCareer's Comprehensive Contribution</h3>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="text-center">
+                                <h4 class="font-bold text-lg text-stanford-black mb-3">Founding Community</h4>
+                                <div class="text-3xl font-bold text-stanford-cardinal mb-2">Initial Cohort</div>
+                                <p class="text-stanford-cool-grey">Direct access to Gen Z founders and professionals, with infrastructure designed to scale into the thousands</p>
+                            </div>
+                            <div class="text-center">
+                                <h4 class="font-bold text-lg text-stanford-black mb-3">Pre-Employment Data</h4>
+                                <div class="text-3xl font-bold text-stanford-cardinal mb-2">Growing Dataset</div>
+                                <p class="text-stanford-cool-grey">First-of-its-kind data on how Gen Z navigates the school-to-work transition—grows with every new user</p>
+                            </div>
+                            <div class="text-center">
+                                <h4 class="font-bold text-lg text-stanford-black mb-3">Live Case Study</h4>
+                                <div class="text-3xl font-bold text-stanford-cardinal mb-2">Real-time</div>
+                                <p class="text-stanford-cool-grey">Transparent documentation of GenZCareer's growth journey, serving as a dynamic teaching tool</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Implementation Timeline -->
+        <section id="implementation" class="py-16 lg:py-24 bg-stanford-fog">
+            <div class="container mx-auto px-4 lg:px-6">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="section-title text-center text-stanford-black mb-16">Implementation Timeline</h2>
+                    
+                    <div class="space-y-8">
+                        <div class="timeline-item">
+                            <div class="flex flex-col md:flex-row md:items-center">
+                                <div class="md:w-1/4 mb-4 md:mb-0">
+                                    <div class="bg-stanford-cardinal text-white px-4 py-2 rounded-full text-sm font-bold inline-block">
+                                        Autumn 2025
+                                    </div>
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h3 class="text-xl font-bold text-stanford-black mb-2">Phase 1: Foundation</h3>
+                                    <ul class="text-stanford-cool-grey space-y-1">
+                                        <li>• <strong>Joint User Acquisition & Growth Phase:</strong> Leverage the CES partnership to scale the platform's user base, establishing the foundational cohort for longitudinal study</li>
+                                        <li>• <strong>Baseline Data Collection:</strong> Instrument and collect baseline data from the initial user cohort</li>
+                                        <li>• Launch of exclusive CES student services</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="flex flex-col md:flex-row md:items-center">
+                                <div class="md:w-1/4 mb-4 md:mb-0">
+                                    <div class="bg-stanford-cardinal text-white px-4 py-2 rounded-full text-sm font-bold inline-block">
+                                        Winter/Spring 2026
+                                    </div>
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h3 class="text-xl font-bold text-stanford-black mb-2">Phase 2: Research Execution</h3>
+                                    <ul class="text-stanford-cool-grey space-y-1">
+                                        <li>• Longitudinal study implementation</li>
+                                        <li>• Quantitative analysis and case study development</li>
+                                        <li>• First deliverables and preliminary findings</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="flex flex-col md:flex-row md:items-center">
+                                <div class="md:w-1/4 mb-4 md:mb-0">
+                                    <div class="bg-stanford-cardinal text-white px-4 py-2 rounded-full text-sm font-bold inline-block">
+                                        Summer 2026
+                                    </div>
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h3 class="text-xl font-bold text-stanford-black mb-2">Phase 3: Publication & Dissemination</h3>
+                                    <ul class="text-stanford-cool-grey space-y-1">
+                                        <li>• White paper completion and submission</li>
+                                        <li>• Case study finalization</li>
+                                        <li>• Conference presentations and media engagement</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expected Outputs -->
+        <section class="py-16 lg:py-24 bg-white">
+            <div class="container mx-auto px-4 lg:px-6">
+                <div class="max-w-5xl mx-auto">
+                    <h2 class="section-title text-center text-stanford-black mb-16">Expected Outputs & Deliverables</h2>
+                    
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="bg-stanford-cardinal text-white rounded-2xl p-6 mb-6">
+                                <h3 class="text-xl font-bold mb-4">Academic Publications</h3>
+                                <div class="space-y-3 text-left">
+                                    <div class="flex items-start">
+                                        <span class="text-red-200 mr-2">•</span>
+                                        <span class="text-sm">Joint White Paper or NBER Working Paper</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="text-red-200 mr-2">•</span>
+                                        <span class="text-sm">Peer-reviewed articles in top journals</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="text-red-200 mr-2">•</span>
+                                        <span class="text-sm">Conference presentations</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="bg-stanford-cardinal text-white rounded-2xl p-6 mb-6">
+                                <h3 class="text-xl font-bold mb-4">Educational Resources</h3>
+                                <div class="space-y-3 text-left">
+                                    <div class="flex items-start">
+                                        <span class="text-red-200 mr-2">•</span>
+                                        <span class="text-sm">Three new GSB case studies</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="text-red-200 mr-2">•</span>
+                                        <span class="text-sm">Teaching notes and discussion guides</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="text-red-200 mr-2">•</span>
+                                        <span class="text-sm">Student workshop curricula</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="bg-stanford-cardinal text-white rounded-2xl p-6 mb-6">
+                                <h3 class="text-xl font-bold mb-4">Platform Initiatives</h3>
+                                <div class="space-y-3 text-left">
+                                    <div class="flex items-start">
+                                        <span class="text-red-200 mr-2">•</span>
+                                        <span class="text-sm">GenZCareer × CES Showcase Series</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="text-red-200 mr-2">•</span>
+                                        <span class="text-sm">Quarterly research briefings</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="text-red-200 mr-2">•</span>
+                                        <span class="text-sm">Annual Gen Z Entrepreneurship Report</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Ask & Next Steps -->
+        <section id="next-steps" class="py-16 lg:py-24 bg-gradient-to-br from-stanford-cardinal via-stanford-dark-red to-stanford-cardinal text-white relative overflow-hidden">
+            <div class="absolute inset-0 bg-black/40"></div>
+            <div class="container mx-auto px-4 lg:px-6 relative z-20">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="section-title text-white mb-8">The Ask & Next Steps</h2>
+                    
+                    <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-8 mb-12 border border-white/30 shadow-2xl">
+                        <h3 class="text-2xl font-bold mb-6 text-white">Our Specific Request</h3>
+                        <p class="text-xl leading-relaxed mb-6 text-white">
+                            We propose appointing <strong>Karanjot Singh as a Visiting Student Researcher for the Autumn 2025 term</strong> to lead this joint initiative from within the Graduate School of Business. The VSR role is essential for seamless integration with CES's research infrastructure and student programs while enabling the collaborative development of this unique Gen Z entrepreneurship dataset.
+                        </p>
+                        <div class="bg-white/30 rounded-lg p-6 border border-white/20">
+                            <p class="text-lg text-white font-medium">
+                                This partnership positions CES at the forefront of understanding the Gen Z entrepreneurial wave while we jointly build resources to support students in creating tomorrow's ventures.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Information -->
+                    <div class="grid md:grid-cols-2 gap-8 mb-12">
+                        <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6 border border-white/30 shadow-xl">
+                            <h3 class="text-xl font-bold text-white mb-4">Immediate Next Steps</h3>
+                            <div class="text-left space-y-3 text-white">
+                                <div class="flex items-start">
+                                    <span class="text-yellow-200 mr-2 font-bold">•</span>
+                                    <span class="font-medium">Schedule a 60-minute exploratory meeting</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-yellow-200 mr-2 font-bold">•</span>
+                                    <span class="font-medium">Discuss collaboration mechanics and goals</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-yellow-200 mr-2 font-bold">•</span>
+                                    <span class="font-medium">Explore pathway to formal partnership</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-yellow-200 mr-2 font-bold">•</span>
+                                    <span class="font-medium">Address implementation questions</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6 border border-white/30 shadow-xl">
+                            <h3 class="text-xl font-bold text-white mb-4">Contact Information</h3>
+                            <div class="space-y-3 text-white">
+                                <div class="flex items-center">
+                                    <span class="mr-2 text-lg">👤</span>
+                                    <span class="font-semibold">Karanjot Singh, Founder & CEO</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="mr-2 text-lg">✉️</span>
+                                    <a href="mailto:karanjot@genzcareer.com" class="hover:text-yellow-200 transition-colors font-medium underline">
+                                        karanjot@genzcareer.com
+                                    </a>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="mr-2 text-lg">💼</span>
+                                    <a href="https://www.linkedin.com/in/karanjot786" target="_blank" rel="noopener noreferrer" class="hover:text-yellow-200 transition-colors font-medium underline">
+                                        LinkedIn: /in/karanjot786
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Call to Action -->
+                    <div class="text-center">
+                        <div class="max-w-3xl mx-auto">
+                            <h3 class="text-2xl lg:text-3xl font-bold text-white mb-8">Ready to Begin This Partnership?</h3>
+                            <div class="flex justify-center items-center mb-8">
+                                <a href="mailto:karanjot@genzcareer.com" class="stanford-btn normal-case bg-white text-gray-900 hover:bg-gray-100 hover:text-gray-900 text-lg px-8 py-4 flex items-center shadow-lg transform hover:scale-105 transition-all duration-200">
+                                    <span class="mr-2">💬</span>
+                                    Contact me
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-200 py-16 border-t border-gray-700">
+        <div class="container mx-auto px-4 lg:px-6">
+            <div class="text-center">
+                <div class="flex justify-center items-center space-x-4 mb-8">
+                    <!-- <img src="logo.png" alt="GenZCareer Logo" class="h-10 w-10"> -->
+                    <span class="text-2xl font-bold text-white">GenZCareer × Stanford CES Partnership</span>
+                </div>
+                <div class="max-w-2xl mx-auto mb-8">
+                    <p class="text-xl text-white font-semibold mb-4">Karanjot Singh, Founder, GenZCareer</p>
+                    <div class="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-8">
+                        <a href="mailto:karanjot@genzcareer.com" class="hover:text-stanford-cardinal transition-colors flex items-center text-lg font-medium">
+                            <span class="mr-2 text-xl">✉️</span>
+                            karanjot@genzcareer.com
+                        </a>
+                        <!-- <div class="flex items-center text-lg">
+                            <span class="mr-2 text-xl">📞</span>
+                            <span class="font-medium text-gray-200">(415) 123-4567</span>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="bg-gray-800 rounded-lg p-6 max-w-4xl mx-auto border border-gray-600">
+                    <p class="text-gray-300 leading-relaxed">
+                        A unique convergence of GenZCareer's real-world insights with CES's academic excellence, designed to advance our shared mission of fostering principled entrepreneurship.
+                    </p>
+                </div>
+                <div class="mt-8 pt-8 border-t border-gray-700">
+                    <p class="text-gray-400 text-sm">
+                        © 2025 GenZCareer × Stanford Center for Entrepreneurial Studies Partnership Proposal
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileNavLinks = mobileMenu.querySelectorAll('a[href^="#"]');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Update active navigation link on scroll
+        const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+        const sections = document.querySelectorAll('section[id]');
+
+        function updateActiveNav() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNav);
+        updateActiveNav(); // Initial call
+    </script>
+</body>
+</html>
